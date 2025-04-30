@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Wheel Challenge</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.4/lottie.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <h1 class="heading-with-info">
+            Math Wheel Challenge
+            <button class="info-btn" id="infoBtn" aria-label="How to play?">i</button>
+        </h1>
+        <div class="instructions-popup" id="instructionsPopup">
+            <div class="instructions-content">
+                <button class="close-btn" id="closeInstructions">&times;</button>
+                <h2>How to Play</h2>
+                <p>1. Click <strong>Spin Wheel</strong> to rotate the wheel.</p>
+                <p>2. The number at the <strong>bottom pointer</strong> is your dividend.</p>
+                <p>3. The number at the center is <strong>divisor.</strong></p>
+                <p>4. Enter the answer in the input box and click on <strong>OK.</strong></p>
+                <p>5. Get all 8 answers correct for a special celebration!</p>
+                <p>Example: If center number is 12 and selected number is 36, the answer would be 3 (36 ÷ 12 = 3)</p>
+            </div>
+        </div>
+           
+        <div class="wheel-container">
+            <div class="wheel" id="wheel">
+                <div class="center-divisor" id="divisor">12</div>
+                <div class="dividend" style="--i:0">36</div>
+                <div class="dividend" style="--i:1">72</div>
+                <div class="dividend" style="--i:2">144</div>
+                <div class="dividend" style="--i:3">96</div>
+                <div class="dividend" style="--i:4">60</div>
+                <div class="dividend" style="--i:5">24</div>
+                <div class="dividend" style="--i:6">108</div>
+                <div class="dividend" style="--i:7">84</div>
+            </div>
+            <div class="pointer-container">
+                <div class="pointer"></div>
+            </div>
+        </div>
+        
+        <div class="current-number" id="currentNumber">
+            Spin the wheel to start!
+        </div>
+        
+        <div class="answer-section">
+            <input type="number" id="answerInput" placeholder="Enter answer" disabled>
+            <button id="submitBtn" disabled>OK</button>
+        </div>
+        
+        <div class="feedback">
+            <p id="message"></p>
+        </div>
+        
+        <div class="controls">
+            <button id="spinBtn">Spin Wheel</button>
+            <div class="score">Score: <span id="scoreValue">0</span>/<span id="totalProblems">8</span></div>
+        </div>
+    </div>
+
+    <div class="celebration" id="celebration">
+        <div id="lottie-celebration" style="background: transparent; width: 300px; height: 300px;"></div>
+        <h2>Perfect Score!</h2>
+        <p>You got all <span id="finalScore">8</span> answers correct!</p>
+        <button id="playAgainBtn">Play Again</button>
+    </div>
+
+    <audio id="celebrationSound" src="assets/celebration.wav" preload="auto"></audio>
+    <audio id="spinSound" src="assets/spin.wav" preload="auto"></audio>
+    <audio id="correctSound" src="assets/correct.mp3" preload="auto"></audio>
+    <audio id="wrongSound" src="assets/wrong.mp3" preload="auto"></audio>
+
+</body>
+</html>
