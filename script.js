@@ -205,7 +205,6 @@ document.addEventListener('DOMContentLoaded', function () {
             // Re-enable buttons for the next round
             answerInput.disabled = false;
             submitBtn.disabled = false;
-            spinBtn.disabled = false;
             answerInput.value = '';
             answerInput.focus();
 
